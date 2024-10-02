@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ARS.Models.TicketReserve_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Plane_tbls.Aplane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resfrom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResDepDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Planeseat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResTicketPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResPlaneType)
+        </th>
+        <th></th>
+    </tr>
+
+ @*(var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plane_tbls.Aplane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resfrom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Resto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResDepDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Planeseat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResTicketPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResPlaneType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ResID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResID })
+        </td>
+    </tr>
+}*@
+
+</table>

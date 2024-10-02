@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ARS.Models.AeroPlaneInfo>
+
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Search Result</h2>
+<center>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Plane Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Flight Time</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in ViewBag.ss)
+            {
+            <tr>
+                <td>
+                    @{
+                        int pi = int.Parse(@item.PlaneId.ToString());
+                        var dd = new ARS.Models.ContextCS();
+                        var pname = dd.PlaneInfo.Where(a => a.Planeid == pi).FirstOrDefault();
+                        @pname.Aplane
+                    }
+                </td>
+                <td>@item.Resfrom</td>
+                <td>@item.ResTo</td>
+                <td>@item.PlaneSeat</td>
+                <td>@item.ResTime</td>
+                <td>@item.ResTicketPrice</td>
+                <td>
+                    @if (Session["  UserID "] == null)
+                {
+                    <a href="@Url.Action("Login","Admin")" class="btn btn-success">Please login for Booking</a> 
+                }
+                else
+                {
+                    <a href="@Url.Action("Booking", "FlightBook", new {@fid=item.ResID})" class="btn btn-success">Book Flight Now</a>
+                }
+                </td>
+            </tr>
+                            }
+        </tbody>
+    </table>
+</center>

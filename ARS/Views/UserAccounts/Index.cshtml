@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ARS.Models.UserAccount>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<style>
+    h2{
+        text-align:center;
+        padding-top:2em;
+        font-weight:bolder;
+        font-family:'Comic Sans MS';
+
+    }
+</style>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phoneno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NICNo)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+</table>

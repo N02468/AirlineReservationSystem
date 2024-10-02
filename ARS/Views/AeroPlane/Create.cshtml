@@ -1,0 +1,310 @@
+﻿@model ARS.Models.AeroPlaneInfo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+
+    <!-- Theme customization -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h4 id="offcanvasRightLabel">Theme Customization</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="nav-position mb-30">
+                <p><span class="text-primary"><i class="bi bi-octagon-fill"></i></span> Click the button bellow to change navbar position <strong>(Top/Left)</strong></p>
+                <a role="button" class="btn btn-primary" id="navChange"><i class="bi bi-arrow-bar-up"></i></a>
+            </div>
+            <div class="theme-color">
+                <p><span class="text-primary"><i class="bi bi-octagon-fill"></i></span> Click on any color bellow to change theme color</p>
+                <button class="btn-color color-1" id="color-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Violets Are Blue"></button>
+                <button class="btn-color color-2" id="color-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Lavender Indigo"></button>
+                <button class="btn-color color-3" id="color-3" data-bs-toggle="tooltip" data-bs-placement="top" title="Deep Magenta"></button>
+                <button class="btn-color color-4" id="color-4" data-bs-toggle="tooltip" data-bs-placement="top" title="Blue"></button>
+                <button class="btn-color color-5" id="color-5" data-bs-toggle="tooltip" data-bs-placement="top" title="Medium Aquamarine"></button>
+                <button class="btn-color color-6" id="color-6" data-bs-toggle="tooltip" data-bs-placement="top" title="Orioles Orange"></button>
+                <button class="btn-color color-7" id="color-7" data-bs-toggle="tooltip" data-bs-placement="top" title="Maya Blue"></button>
+                <button class="btn-color color-8" id="color-8" data-bs-toggle="tooltip" data-bs-placement="top" title="Deep Violet"></button>
+                <button class="btn-color color-9" id="color-9" data-bs-toggle="tooltip" data-bs-placement="top" title="Dark"></button>
+            </div>
+        </div>
+    </div>
+    <!-- Theme customization -->
+    <!-- header -->
+    <div class="header">
+        <div class="top-header">
+            <div class="row justify-content-between">
+                <div class="col-xl-3 col-lg-4 col-sm-4 col-6">
+                    <div class="d-flex align-items-center">
+                        <div class="logo">
+                            <div class="logo-big">
+
+                            </div>
+                            <div class="logo-small">
+
+                            </div>
+                        </div>
+                        <button class="sidebar-collapse">
+                            <i class="bi bi-list"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="horizontal-menu bg-primary">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-dark">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent2" aria-controls="navbarSupportedContent2" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent2">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="dashboardDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Dashboard
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="dashboardDropdown">
+                                        <li><a href="index.html" class="dropdown-item">Sales Dashboard</a></li>
+                                        <li><a href="dashboard-marketing.html" class="dropdown-item">Marketing Dashboard</a></li>
+                                        <li><a href="dashboard-service.html" class="dropdown-item">Service Dashboard</a></li>
+                                        <li><a href="dashboard-finance.html" class="dropdown-item">Finance Dashboard</a></li>
+                                        <li><a href="dashboard-it.html" class="dropdown-item">IT Dashboard</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="ecommerceDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Ecommerce
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="ecommerceDropdown">
+                                        <li><a href="ecommerce-add-product.html" class="dropdown-item">Add A Product</a></li>
+                                        <li><a href="ecommerce-product.html" class="dropdown-item">Products</a></li>
+                                        <li><a href="ecommerce-category.html" class="dropdown-item">Category</a></li>
+                                        <li><a href="ecommerce-customer.html" class="dropdown-item">Customers</a></li>
+                                        <li><a href="ecommerce-order.html" class="dropdown-item">Orders</a></li>
+                                        <li><a href="ecommerce-coupon.html" class="dropdown-item">Coupons</a></li>
+                                        <li><a href="ecommerce-staff.html" class="dropdown-item">Our Staff</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="componentDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Components
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="componentDropdown">
+                                        <li><a href="component_accordion.html" class="dropdown-item">Accordion</a></li>
+                                        <li><a href="component_alert.html" class="dropdown-item">Alert</a></li>
+                                        <li><a href="component_badge.html" class="dropdown-item">Badge</a></li>
+                                        <li><a href="component_button.html" class="dropdown-item">Button</a></li>
+                                        <li><a href="component_card.html" class="dropdown-item">Card</a></li>
+                                        <li><a href="component_carousel.html" class="dropdown-item">Carousel</a></li>
+                                        <li><a href="component_modal.html" class="dropdown-item">Modal</a></li>
+                                        <li><a href="component_progress.html" class="dropdown-item">Progress</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="extra_component.html">Extra Components</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="formAndTableDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Forms & Tables
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="formAndTableDropdown">
+                                        <li><a href="form_element.html" class="dropdown-item">Form Elements</a></li>
+                                        <li><a href="form_layout.html" class="dropdown-item">Form Layout</a></li>
+                                        <li><a href="editor.html" class="dropdown-item">Text Editor</a></li>
+                                        <li><a href="table.html" class="dropdown-item">Table</a></li>
+                                        <li><a href="data_table.html" class="dropdown-item">Datatable</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="extraUiDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Extra UI
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="extraUiDropdown">
+                                        <li><a href="widget.html" class="dropdown-item">Widgets</a></li>
+                                        <li><a href="chart.html" class="dropdown-item">Apexcharts</a></li>
+                                        <li class="dropdown-submenu dropend">
+                                            <a href="#" class="dropdown-item dropdown-toggle" id="iconDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Icons</a>
+                                            <ul class="dropdown-menu" aria-labelledby="iconDropdown">
+                                                <li><a href="bootstrap_icon.html" class="dropdown-item">Bootstrap Icons </a></li>
+                                                <li><a href="font_awesome.html" class="dropdown-item">Fontawesome</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="pageDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                        Pages
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="pageDropdown">
+                                        <li><a href="email.html" class="dropdown-item">Email</a></li>
+                                        <li><a href="login.html" class="dropdown-item">Login</a></li>
+                                        <li><a href="register.html" class="dropdown-item">Register</a></li>
+                                        <li><a href="password.html" class="dropdown-item">Forgot Password</a></li>
+                                        <li><a href="403.html" class="dropdown-item">Error 403</a></li>
+                                        <li><a href="404.html" class="dropdown-item">Error 404</a></li>
+                                        <li><a href="500.html" class="dropdown-item">Error 500</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header -->
+    <!-- main sidebar -->
+    <div class="fixed-sidebar sidebar-mini" data-simplebar>
+        <div class="profile">
+            
+        </div>
+        <!-- sidebar menu -->
+        <div class="menu">
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-title"><span>Menu</span></li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard" tabindex="0"><i class="bi bi-grid-fill"></i> <span>Aeroplane</span></a>
+                        <ul class="sub-menu">
+
+                            <li><a href="index.html" class="sub-menu-item">@Html.ActionLink("Add", "AdminLogin", "Admin")</a></li>
+                            <li><a href="dashboard-marketing.html" class="sub-menu-item">View Details</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Ecommerce" tabindex="0"><i class="bi bi-basket2-fill"></i> <span>Flight</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="ecommerce-add-product.html" class="sub-menu-item">Add</a></li>
+                            <li><a href="ecommerce-product.html" class="sub-menu-item">Add Flight</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-title"><span>Pages</span></li>
+                    <li class="sidebar-item"><a href="email.html" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Email Application" tabindex="0"><i class="bi bi-envelope-fill"></i> <span>Email Application</span></a></li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Authentication" tabindex="0"><i class="bi bi-person-badge-fill"></i> <span>Authentication</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="login.html" class="sub-menu-item">Login</a></li>
+                            <li><a href="register.html" class="sub-menu-item">Register</a></li>
+                            <li><a href="password.html" class="sub-menu-item">Forgot Password</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar menu -->
+    </div>
+</div>
+
+<style>
+    h2 {
+        text-align: center;
+        font-family: 'system-ui';
+        font-weight: bold;
+        color: black;
+    }
+    h4 {
+        text-align: center;
+    }
+    .btn {
+     border:1px solid #3498db;
+     background:none;
+     padding:10px 20px;
+     font-size:20px;
+     font-family:'Comic Sans MS';
+     cursor:pointer;
+     margin:10px;
+     position:relative;
+     overflow:hidden;
+    }
+    .btn-default{
+        color:#3498db;
+    }
+    .btn:hover {
+        color: #3498db;
+    }
+    .btn::before{
+        content:"";
+        left:0;
+        position:absolute;
+        width:100%;
+        height:0%;
+        background: #3498db;
+        z-index:-1;
+        transition:0.8s;
+    }
+    .btn:hover{
+        color:#fff;
+    }
+    .btn::before{
+        height:180%;
+    }
+    .btn:hover::before{
+        height:0%;
+    }
+    .form-group{
+        text-align:center;
+    }
+
+</style>
+
+
+<div class="blank-page widget-shadow scroll" id="style-2 div1">
+    <h2>Create AeroPlaneInfo</h2>
+    <h2>@ViewBag.m</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>AeroPlaneInfo</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Aplane, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Aplane, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Aplane, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SeatingCapacity, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SeatingCapacity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SeatingCapacity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @*@Html.ActionLink("Back to List", "Index")*@
+    </div>
+</div>

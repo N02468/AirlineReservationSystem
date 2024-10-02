@@ -1,0 +1,102 @@
+﻿@model IEnumerable<ARS.Models.AeroPlaneInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<div class="container-fluid">
+
+  
+    <!-- header -->
+    <!-- main sidebar -->
+    <div class="fixed-sidebar sidebar-mini" data-simplebar>
+        <div class="profile">
+
+        </div>
+        <!-- sidebar menu -->
+        <div class="menu">
+            <div class="sidebar-menu">
+                <ul>
+                    <li class="sidebar-title"><span>Menu</span></li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboard" tabindex="0"><i class="bi bi-grid-fill"></i> <span>Aeroplane</span></a>
+                        <ul class="sub-menu">
+
+                            <li><a href="index.html" class="sub-menu-item">@Html.ActionLink("Add", "AdminLogin", "Admin")</a></li>
+                            <li><a href="dashboard-marketing.html" class="sub-menu-item">View Details</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Ecommerce" tabindex="0"><i class="bi bi-basket2-fill"></i> <span>Flight</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="ecommerce-add-product.html" class="sub-menu-item">Add</a></li>
+                            <li><a href="ecommerce-product.html" class="sub-menu-item">Add Flight</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <li class="sidebar-title"><span>Pages</span></li>
+                    <li class="sidebar-item"><a href="email.html" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Email Application" tabindex="0"><i class="bi bi-envelope-fill"></i> <span>Email Application</span></a></li>
+                    <li class="sidebar-item has-sub">
+                        <a role="button" class="sidebar-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Authentication" tabindex="0"><i class="bi bi-person-badge-fill"></i> <span>Authentication</span></a>
+                        <ul class="sub-menu">
+                            <li><a href="login.html" class="sub-menu-item">Login</a></li>
+                            <li><a href="register.html" class="sub-menu-item">Register</a></li>
+                            <li><a href="password.html" class="sub-menu-item">Forgot Password</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!-- sidebar menu -->
+    </div>
+</div>
+<style>
+    h2{
+        text-align:center;
+    }
+</style>
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Aplane)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatingCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aplane)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatingCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Planeid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Planeid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Planeid })
+        </td>
+    </tr>
+}
+
+</table>
